@@ -1,1 +1,10 @@
+//profile-title: base64:Tc6bSGRpIOGmk+GmkyDhpbTqqq7qqoDhoLvqoLjhp4HhppM=
+//profile-update-interval: 24
+//subscription-userinfo: upload=0; download=0; total=10737418240000000; expire=2546249531
+//support-url: https://t.me/mhdi_h6
+//profile-web-page-url: https://github.com/Mhdiqpzx
 
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp6OXBWOVhMM2VJQmMzdm55R1BVU0JW@3.128.189.248:26126/?POST%20
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNToyUFVkNmdpelJueVVMcFMwS1R4T21u@18.118.185.65:47440/?POST%20
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3TkR5SVV1RVdvUU11MHlQQklYUXZW@35.88.230.55:56860/?POST%20
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp1UUlpUXdOaGNzSXo3TktnSWQyYnF6@52.88.229.59:30759/?POST%20
