@@ -1,7 +1,4 @@
 import requests
-from urllib.parse import urlparse
-import os
-import sys
 import logging
 
 logging.basicConfig(
@@ -10,13 +7,13 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-HEADERS = """//profile-title: base64:Tc6bSGRpIOGmk+GmkyDhpbTqqq7qqoDhoLvqoLjhp4HhppM=
-//profile-update-interval: 24
+HEADERS = """//profile-title: base64:Tc6bSGRpIFNoYWRvd3NvY2tz
+//profile-update-interval: 1
 //subscription-userinfo: upload=0; download=0; total=10737418240000000; expire=2546249531
 //support-url: https://t.me/mhdi_h6
 //profile-web-page-url: https://github.com/Mhdiqpzx"""
 
-def fetch_config(url):
+def fetch_config(url, server_number):
     https_url = url.replace('ssconf://', 'https://')
     logger.info(f"Fetching config from: {https_url}")
     
@@ -25,7 +22,8 @@ def fetch_config(url):
         response.raise_for_status()
         content = response.text.strip()
         if content.startswith('ss://'):
-            logger.info(f"Successfully fetched config from {https_url}")
+            content = f"{content}#MΛHdi-PRO-{server_number}"
+            logger.info(f"Successfully fetched config from {https_url} and added server number")
             return content
         else:
             logger.error(f"Invalid config format from {https_url}")
@@ -45,25 +43,25 @@ def main():
     ]
 
     configs = []
-    for url in urls:
+    for index, url in enumerate(urls, 1):
         logger.info(f"Processing URL: {url}")
-        config = fetch_config(url)
+        config = fetch_config(url, index)
         if config:
             configs.append(config)
     
     if not configs:
         logger.error("No configs were successfully fetched!")
-        sys.exit(1)
+        exit(1)
 
     try:
         with open('configs.txt', 'w', encoding='utf-8') as f:
             f.write(HEADERS)
             f.write('\n\n')
-            f.write('\n'.join(configs))
+            f.write('\n\n'.join(configs))
         logger.info(f"Successfully wrote {len(configs)} configs to configs.txt with headers")
     except Exception as e:
         logger.error(f"Error writing to file: {str(e)}")
-        sys.exit(1)
+        exit(1)
 
 if __name__ == "__main__":
     main()
